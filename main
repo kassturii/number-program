@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main(){
+int x,y,w,z;
+printf("Enter the two numbers:");
+scanf("%d%d",&x,&y);
+z=x+y;
+printf("The resultant of two numbers are :%d\n",z);
+w=x*y;
+printf("The multiplication of the two numbers are :%d\n",w);
+return 0;
+}
