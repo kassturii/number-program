@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main() {
+    // Write C code here
+    int x;
+    printf("Enter the number from the user :");
+    scanf("%d",&x);
+    if (x%2==0)
+    printf("It's an even number. %d\n",x);
+    else
+    printf("It's not an even number .%d\n",x);
+
+    return 0;
+}
