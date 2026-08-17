@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    float tm;
+
+    printf("Enter total marks: ");
+    scanf("%f", &tm);
+
+    if (tm < 0 || tm > 100) {
+        printf("Invalid marks entered. Please enter a value between 0 and 100.\n");
+    } else if (tm >= 60) {
+        printf("Grade: First Division\n");
+    } else if (tm >= 50) {
+        printf("Grade: Second Division\n");
+    } else if (tm >= 40) {
+        printf("Grade: Third Division\n");
+    } else {
+        printf("Grade: Fail\n");
+    }
+
+    return 0;
+}
