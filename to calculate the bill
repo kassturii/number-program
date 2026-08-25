@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int x;
+    float bill;
+
+    printf("Enter the unit consumed by the user :");
+    scanf("%d", &x);
+
+    if (x <= 100) {
+        bill = x * 0.60;
+    } else if (101 <= x && x <= 300) {
+        bill = x * 0.70;
+    } else if (301 <= x && x <= 500) {
+        bill = x * 0.80;
+    } else {
+        bill = x * 0.90;
+    }
+
+    printf("%f Total bill\n", bill);
+    return 0;
+}
