@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main() {
+    for (int i = 1; i <= 5; i++) {
+        if (i == 3) {
+            printf("Found i = 3. Breaking out of loop!\n");
+            break; // Exits the loop entirely
+        }
+        printf("Current value of i: %d\n", i);
+    }
+    printf("Loop finished.\n");
+    return 0
