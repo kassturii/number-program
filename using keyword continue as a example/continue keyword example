@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+    for (int i = 1; i <= 5; i++) {
+        if (i == 3) {
+            printf("Found i = 3. Skipping with continue!\n");
+            continue; // Skips the remainder of iteration 3
+        }
+        printf("Current value of i: %d\n", i);
+    }
+    printf("Loop finished.\n");
+    return 0;
+}
