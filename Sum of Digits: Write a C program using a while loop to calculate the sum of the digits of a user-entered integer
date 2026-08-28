@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    int sum = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    // Make n positive if the user enters a negative number
+    if (n < 0) {
+        n = -n;
+    }
+
+    // Set i to the entered number
+    i = n;
+
+    while (i > 0) {
+        sum = sum + (i % 10);  // 1. Take the last digit and add it to sum
+        i = i / 10;            // 2. Chop off the last digit
+    }
+
+    printf("Sum of digits = %d\n", sum);
+
+    return 0;
+}
