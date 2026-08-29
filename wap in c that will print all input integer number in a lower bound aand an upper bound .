@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int i,up,lp;
+    // Write C code here
+    printf("Enter the lower bound:\n");
+    scanf("%d",&lp);
+    printf("Enter the upper bound:\n");
+    scanf("%d",&up);
+    i=lp;
+    printf("The output is ");
+    while (i<=up){
+        if (i==up){
+            printf("%d.",i);
+        }else{
+        printf("%d,",i);
+    }
+    
+    i++;
+    }
+printf("\n");
+    return 0;
+}
