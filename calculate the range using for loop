@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    int i, up, lp;
+    
+    printf("Enter the lower bound and upper bound: ");
+    scanf("%d %d", &lp, &up);
+    
+    // You only need the for loop, remove the while loop entirely
+    for (i = lp; i <= up; i++) {
+        printf("%d ", i); // Added a space after %d for readability
+    }
+    
+    printf("\n"); // Prints a clean newline at the end
+    return 0;
+}
