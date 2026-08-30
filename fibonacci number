@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    int a = 0; // First Fibonacci number
+    int b = 1; // Second Fibonacci number
+    int next;  // Variable to store the next number
+
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);
+
+    printf("Fibonacci Series: ");
+
+    for (i = 1; i <= n; i++) {
+        // 1. Print the current number
+        printf("%d ", a);
+        
+        // 2. Calculate the next number in the sequence
+        next = a + b;
+        
+        // 3. Shift the variables forward for the next round
+        a = b;
+        b = next;
+    }
+
+    printf("\n");
+    return 0;
+}
