@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    int a, b, i;
+    long long result = 1; // Used long long in case the answer is very large
+
+    printf("Enter base (a) and power (b): ");
+    scanf("%d %d", &a, &b);
+
+    // Loop runs 'b' times to multiply 'a' repeatedly
+    for (i = 1; i <= b; i++) {
+        result = result * a;
+    }
+
+    printf("%d raised to the power %d is: %lld\n", a, b, result);
+    return 0;
+}
