@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main() {
+    int days, slab1, slab2, slab3, total_fine;
+
+    printf("Enter the number of days late: ");
+    scanf("%d", &days);
+
+    // If days are 0 or negative
+    if (days <= 0) {
+        printf("No fine.\n");
+    } 
+    // Category 1: Up to 7 days
+    else if (days <= 7) {
+        slab1 = days;
+        total_fine = slab1 * 1;
+        
+        printf("%dx1 = %d Rs\n", slab1, total_fine);
+    } 
+    // Category 2: 8 to 15 days
+    else if (days <= 15) {
+        slab1 = 7;           // First 7 days are full
+        slab2 = days - 7;    // Extra days go into slab 2
+        total_fine = (slab1 * 1) + (slab2 * 2);
+        
+        printf("7x1 + %dx2 = %d Rs\n", slab2, total_fine);
+    } 
+    // Category 3: 16 to 30 days
+    else if (days <= 30) {
+        slab1 = 7;           // First 7 days are full
+        slab2 = 8;           // Next 8 days are full (7 + 8 = 15 days done)
+        slab3 = days - 15;   // Remaining days go into slab 3
+        total_fine = (slab1 * 1) + (slab2 * 2) + (slab3 * 3);
+        
+        printf("7x1 + 8x2 + %dx3 = %d Rs\n", slab3, total_fine);
+    } 
+    // Category 4: More than 30 days
+    else {
+        printf("Membership cancelled\n");
+    }
+
+    return 0;
+}
