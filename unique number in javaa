@@ -1,0 +1,61 @@
+import java.util.*;
+
+class Unique {
+    int n, m;   // instance variables
+
+    // Constructor to assign m and n
+    Unique(int start, int end) {
+        m = start;
+        n = end;
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("This program generates Unique-digit numbers within a given range.");
+
+        System.out.print("Enter start of range: ");
+        int start = sc.nextInt();
+
+        System.out.print("Enter end of range: ");
+        int end = sc.nextInt();
+
+        // Pass values through constructor
+        Unique obj = new Unique(start, end);
+
+        obj.generate();
+    }
+
+    boolean isUnique(int no) {
+        String str = Integer.toString(no);
+        int le = str.length();
+
+        for (int i = 0; i < le - 1; i++) {
+            for (int j = i + 1; j < le; j++) {
+                if (str.charAt(i) == str.charAt(j))
+                    return false;        
+            }
+        }
+        return true;
+    }
+
+    void generate() {
+        System.out.println();
+        System.out.println("Unique-digit numbers between " + m + " and " + n + " are:");
+
+        boolean found = false;
+
+        for (int i = m; i <= n; i++) {
+            if (isUnique(i)) {
+                System.out.print(i + " ");
+                found = true;
+            }
+        }
+
+        if (!found) {
+            System.out.println("None found in the given range.");
+        }
+    }
+}
+
