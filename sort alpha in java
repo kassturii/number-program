@@ -1,0 +1,63 @@
+import java.util.*;
+class SortAlpha{
+    String sent;
+    int n;
+    SortAlpha(){
+        sent="";
+        n=0;
+        }
+    void acceptsent(){
+        Scanner sc= new Scanner (System.in);
+        System.out.println("Enter the Sentence");
+        sent=sc.nextLine();
+        sent=sent.toUpperCase();
+        }
+        void sort(SortAlpha P)  {
+        String str= P.sent+" ";
+        for(int i=0;i<str.length();i++){
+        char ch= str.charAt(i);
+        if(Character.isWhitespace(ch))
+        n++;
+        }
+        String word[]=new String[n];
+        String wrd="";
+        int index= 0;
+        for(int i=0;i<str.length();i++){
+            char ch=str.charAt(i);
+            if(Character.isLetterOrDigit(ch))
+            wrd=wrd+ch;
+                else if(Character.isWhitespace(ch)){
+                word[index++]=wrd;
+                wrd="";
+            }
+        }
+        for(int j=0;j<n;j++){
+            for(int k=0;k<n-1;k++)
+            {
+                if(word[k].compareTo(word[k+1])>0){
+                    String temp=word[k];
+                    word[k]=word[k+1];
+                    word[k+1]=temp;
+            }   
+        }
+            sent="";
+            for(int k=0;k<n;k++)
+            sent=sent+word[k]+" ";
+                                                    
+        }
+    }
+    void display(){
+        System.out.println("Original sentence is:" +sent);
+        sort(this);
+        System.out.println( "After sorting the sentence is:" +sent);
+    }
+    public static void main(String[]args)
+    {
+        SortAlpha obj=new SortAlpha();
+        obj.acceptsent();
+        obj.display();
+    
+    }
+}
+            
+    
