@@ -1,0 +1,35 @@
+import java.util.*;
+class sorting{
+int i,j,tem;
+int a[]=new int[10];
+public static void main(String[]args) {
+    sorting ob=new sorting();
+    ob.inputData();
+    ob.arrange();
+    ob.outputData();
+}
+void inputData(){
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter the elements of the array");
+    for(i=0;i<10;i++){
+        a[i]=sc.nextInt();
+    }
+    }
+void arrange(){
+    for(i=0;i<10;i++){
+        for(j=0;j<10-1-i;j++){
+            if(a[j]>a[j+1]) {
+                tem=a[j];
+                a[j]=a[j+1];
+                a[j+1]=tem;
+            }
+        }
+    }
+}
+void outputData(){
+    System.out.println("The elements after sorting are" );
+    for(i=0;i<10;i++){
+        System.out. print(a[i]+ " ");
+        
+    }
+}
