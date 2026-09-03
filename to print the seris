@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    int a=2,b=3,c,n;
+    
+    printf("Enter the number ");
+    scanf ("%d",&n);
+    printf("%d\n %d\n",a,b);
+    for ( int i=1;i<=n;i++){
+        c=a*b;
+        a=b;
+        b=c;
+        printf("%d \n",c);
+    }
+    return 0;
+}
+       
