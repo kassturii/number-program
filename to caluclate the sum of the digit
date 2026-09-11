@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int n,s;
+    // Write C code here
+    printf("Enter the number :");
+    scanf ("%d",&n);
+    while (n>9)
+           {
+        s=0;
+        while (n>0)
+            {
+                s=s+(n%10);
+                n=n/10;
+            }
+        n=s;
+           }
+    printf("\n sum of the digits =%d",n);
+
+    return 0;
+}
