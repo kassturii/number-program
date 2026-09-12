@@ -1,0 +1,27 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Compile and Test
+      run: |
+        for file in *.c *.cpp; do
+          [ -e "$file" ] || continue
+          echo "Compiling $file..."
+          if [[ "$file" == *.c ]]; then
+            gcc -Wall "$file" -o "${file%.*}.out"
+          else
+            g++ -Wall "$file" -o "${file%.*}.out"
+          fi
+          echo "Successfully compiled $file"
+        done
