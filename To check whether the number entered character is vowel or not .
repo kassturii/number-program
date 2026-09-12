@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+    char ch;
+    
+    printf("\nEnter any character: ");
+    scanf("%c", &ch);
+    
+   if(ch=='a'|| ch=='e'|| ch=='o'|| ch=='u'|| ch=='i'||ch=='A'|| ch=='E'|| ch=='O'|| ch=='U'|| ch=='I')
+       printf("\n %c is the VOWEL .",ch);
+    else
+       printf("\n %c is the not a VOWEL .",ch);
+    return 0;
+}
+       
